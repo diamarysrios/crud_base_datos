@@ -1,0 +1,30 @@
+<%- include('../partials/header'); %>
+
+    <h1>Crear Libro</h1>
+    <hr>
+
+    <form action="/libros/create" method="post">
+
+        <label>Titulo</label>
+        <input type="text" name="titulo">
+        
+        <label>Autor</label>
+        <select name="autor" required>
+                <option value="null">Seleccione . . .</option>
+            <% autores.forEach(autor => { %>
+                <option value="<%= autor.id %>"><%= autor.nombre_completo %></option>
+            <%}) %>
+        </select>
+
+        <label>ISBN-13</label>
+        <input type="text" name="isbn">
+        
+        <label>Género</label>
+        <input type="text" name="generos">
+
+        <button type="submit">Crear</button>
+        <a class="muted-button button" href="/libros">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

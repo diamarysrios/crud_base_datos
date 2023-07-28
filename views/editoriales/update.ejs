@@ -1,0 +1,25 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= editorial.nombre %></h1>
+    <hr>
+
+    <form action="/editoriales/<%=editorial.id %>" method="post">
+
+        <label>Nombre</label>
+        <input type="text" name="nombre" value="<%=editorial.nombre %>">
+
+        <label>Acerca de</label>
+        <input type="text" name="acerca_de" value="<%=editorial.acerca_de %>">
+
+        <label>País</label>
+        <input type="text" name="pais" value="<%=editorial.pais %>">
+
+        <label>Web</label>
+        <input type="text" name="web" value="<%=editorial.web %>">
+       
+        <button type="submit">Editar</button>
+        <a class="muted-button button" href="/editoriales">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,25 @@
+<%- include('../partials/header'); %>
+
+    <h1>Crear Editorial</h1>
+    <hr>
+
+    <form action="/editoriales/create" method="post">
+
+        <label>Nombre</label>
+        <input type="text" name="nombre">
+
+        <label>Acerca de</label>
+        <input type="text" name="acerca_de">
+
+        <label>País</label>
+        <input type="text" name="pais">
+
+        <label>Web</label>
+        <input type="text" name="web">
+       
+        <button type="submit">Crear</button>
+        <a class="muted-button button" href="/editoriales">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

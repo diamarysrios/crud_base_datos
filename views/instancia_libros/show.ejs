@@ -1,0 +1,13 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= instancia_libro.id %> - <%= instancia_libro.libro.titulo %></h1>
+    <hr>
+
+    <b>Editorial:</b> <%= instancia_libro.editorial.nombre %><br>
+    <b>Estatus:</b> <%= instancia_libro.estatus %><br>
+    <b>Deterioro:</b> <%= instancia_libro.deterioro %><br>
+    <hr>
+
+    <a class="muted-button button" href="/instancia_libros">Volver</a>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,26 @@
+<%- include('../partials/header'); %>
+
+    <h1>Crear Autor</h1>
+    
+    <hr>
+
+    <form action="/autores/create" method="post">
+
+        <label>Nombres</label>
+        <input type="text" name="nombres">
+        
+        <label>Apellidos</label>
+        <input type="text" name="apellidos">
+
+        <label>Nacimiento</label>
+        <input type="date" name="nacimiento">
+        
+        <label>Muerte</label>
+        <input type="date" name="muerte">
+
+        <button type="submit">Crear</button>
+        <a class="muted-button button" href="/autores">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

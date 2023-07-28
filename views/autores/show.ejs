@@ -1,0 +1,24 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= autor.nombre_completo %></h1>
+    
+    <hr>
+
+    <b>Nacimiento:</b> <% if(autor.nacimiento) {%><%= autor.fecha_nacimiento %><% } %><br>
+    <b>Muerte:</b><% if(autor.muerte) {%><%= autor.fecha_muerte %><% } %><br>
+
+    <h3>Libros</h3>
+    <hr>
+
+    <ul>
+        <% libros.forEach(function(libro) { %>
+        <li>
+            <a href="/libros/<%= libro.id %>"><%= libro.titulo %></a>
+        </li>
+        <% }); %>
+    </ul>
+
+    <hr>
+    <a class="muted-button button" href="/autores">Volver</a>
+
+<%- include('../partials/footer'); %>

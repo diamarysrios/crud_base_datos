@@ -1,0 +1,14 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= editorial.nombre %></h1>
+    <hr>
+
+    <b>Acerca de:</b> <%= editorial.acerca_de %><br>
+    <b>País:</b> <%= editorial.pais %><br>
+    <b>Web:</b> <a href="<%= editorial.web %>"><%= editorial.web %></a>
+
+    <hr>
+
+    <a class="muted-button button" href="/editoriales">Volver</a>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,41 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= instancia_libro.id %> - <%= instancia_libro.libro.titulo %></h1>
+    <hr>
+
+    <form action="/instancia_libros/<%= instancia_libro.id %>" method="post">
+
+        <label>Libro</label>
+        <select name="libro" required>
+            <option value="null">Seleccione . . .</option>
+            <% libros.forEach(libro => { %>
+                <option value="<%= libro.id %>" <%= instancia_libro.libro.id == libro.id ? 'selected' : ''  %>><%= libro.titulo %></option>
+            <%}) %>
+        </select>
+        
+        <label>Editorial</label>
+        <select name="editorial" required>
+            <option value="null">Seleccione . . .</option>
+            <% editoriales.forEach(editorial => { %>
+                <option value="<%= editorial.id %>" <%= instancia_libro.editorial.id == editorial.id ? 'selected' : ''  %>><%= editorial.nombre %></option>
+            <%}) %>
+        </select>
+
+        <label>Estatus</label>
+        <select name="estatus" required>
+            <option value="null">Seleccione . . .</option>
+            <option value="Disponible" <%= instancia_libro.estatus == "Disponible" ? 'selected' : ''  %>>Disponible</option>
+            <option value="Prestado" <%= instancia_libro.estatus == "Prestado" ? 'selected' : ''  %>>Prestado</option>
+            <option value="Reservado" <%= instancia_libro.estatus == "Reservado" ? 'selected' : ''  %>>Reservado</option>
+            <option value="En Mantenimiento" <%= instancia_libro.estatus == "En Mantenimiento" ? 'selected' : ''  %>>En Mantenimiento</option>
+        </select>
+
+        <label>Deterioro</label>
+        <input type="text" name="deterioro" value="<%= instancia_libro.deterioro %>">
+
+        <button type="submit">Editar</button>
+        <a class="muted-button button" href="/instancia_libros">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

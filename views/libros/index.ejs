@@ -1,0 +1,32 @@
+<%- include('../partials/header'); %>
+
+    <h1>Libros</h1>
+    <hr>
+
+    <a class="button" href="/libros/create">Nuevo</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>ISBN-13</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <% libros.forEach(function(libro) { %>
+                    <tr>
+                        <td><a href="/libros/<%= libro.id %>"><%= libro.titulo %></a></td>
+                        <td><%= libro.isbn %></td>
+                        <td>
+                            <a class="button" href="/libros/<%= libro.id %>/edit">Editar</a>
+                            <a class="button button-danger" href="/libros/<%= libro.id %>/delete">Eliminar</a>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tr>
+        </tbody>
+    </table>
+
+<%- include('../partials/footer'); %>

@@ -1,0 +1,16 @@
+<%- include('../partials/header'); %>
+
+    <h1><%= libro.titulo %></h1>
+    <hr>
+
+    <b>Autor:</b> <a href="/autores/<%= libro.autor.id %>"><%= libro.autor.nombre_completo %></a><br>
+    <b>ISBN:</b> <%= libro.isbn %><br>
+    <b>Géneros:</b> <% libro.generos.forEach(genero => { %>
+        <%= genero %> 
+    <% }) %><br>
+
+    <hr>
+
+    <a class="muted-button button" href="/libros">Volver</a>
+
+<%- include('../partials/footer'); %>

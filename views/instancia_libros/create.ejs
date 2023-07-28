@@ -1,0 +1,41 @@
+<%- include('../partials/header'); %>
+
+    <h1>Crear Instancia de un libro</h1>
+    <hr>
+
+    <form action="/instancia_libros/create" method="post">
+
+        <label>Libro</label>
+        <select name="libro" required>
+            <option value="null">Seleccione . . .</option>
+            <% libros.forEach(libro => { %>
+                <option value="<%= libro.id %>"><%= libro.titulo %></option>
+            <%}) %>
+        </select>
+        
+        <label>Editorial</label>
+        <select name="editorial" required>
+            <option value="null">Seleccione . . .</option>
+            <% editoriales.forEach(editorial => { %>
+                <option value="<%= editorial.id %>"><%= editorial.nombre %></option>
+            <%}) %>
+        </select>
+
+        <label>Estatus</label>
+        <select name="estatus" required>
+            <option value="null">Seleccione . . .</option>
+            <option value="Disponible">Disponible</option>
+            <option value="Prestado">Prestado</option>
+            <option value="Reservado">Reservado</option>
+            <option value="En Mantenimiento">En Mantenimiento</option>
+        </select>
+
+        <label>Deterioro</label>
+        <input type="text" name="deterior">
+
+        <button type="submit">Crear</button>
+        <a class="muted-button button" href="/instancia_libros">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>

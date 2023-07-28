@@ -1,0 +1,25 @@
+<%- include('../partials/header'); %>
+
+    <h1>Editar <%= autor.nombre_completo %></h1>
+    <hr>
+
+    <form action="/autores/<%= autor.id %>" method="post">
+
+        <label>Nombres</label>
+        <input type="text" name="nombres" value="<%= autor.nombres %>" >
+        
+        <label>Apellidos</label>
+        <input type="text" name="apellidos" value="<%= autor.apellidos %>">
+
+        <label>Nacimiento</label>
+        <input type="date" name="nacimiento" value="<%= autor.nacimiento %>">
+        
+        <label>Muerte</label>
+        <input type="date" name="muerte" value="<%= autor.muerte %>">
+
+        <button type="submit">Editar</button>
+        <a class="muted-button button" href="/autores">Volver</a>
+
+    </form>
+
+<%- include('../partials/footer'); %>
